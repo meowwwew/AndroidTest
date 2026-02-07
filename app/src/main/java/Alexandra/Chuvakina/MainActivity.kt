@@ -1,7 +1,10 @@
 package Alexandra.Chuvakina
 
+import Alexandra.Chuvakina.R.id.DiceOne
+import android.media.Image
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -32,8 +35,21 @@ class MainActivity : AppCompatActivity() {
     private fun rollDice() {
         val dice= Dice(6)
         val diceRoll=dice.roll()
-        val rollTextView: TextView=findViewById(R.id.textView2)
-        rollTextView.text=diceRoll.toString()
+        val diceImage: ImageView = findViewById(DiceOne)
+        if (diceRoll==1){
+            diceImage.setImageResource(R.drawable.one)
+        } else if (diceRoll==2){
+            diceImage.setImageResource(R.drawable.two)
+        } else if (diceRoll==3){
+            diceImage.setImageResource(R.drawable.three)
+        } else if (diceRoll==4){
+            diceImage.setImageResource(R.drawable.four)
+        } else if (diceRoll==5){
+            diceImage.setImageResource(R.drawable.five)
+        }else if (diceRoll==6){
+            diceImage.setImageResource(R.drawable.six)
+        }
+
     }
     class Dice(val numSides: Int){
         fun roll(): Int {
