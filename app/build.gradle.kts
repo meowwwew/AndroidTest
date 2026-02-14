@@ -4,6 +4,7 @@ plugins {
 }
 
 android {
+
     namespace = "Alexandra.Chuvakina"
     compileSdk = 36
 
@@ -15,6 +16,10 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+    buildFeatures {
+        viewBinding = true
     }
 
     buildTypes {
